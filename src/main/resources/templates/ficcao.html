@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Livraria Online - Livros de Ficção</title>
+    <link rel="stylesheet" th:href="@{/css/categorias.css}">
+</head>
+<body>
+    <header>
+        <h1>Livraria Online - Livros de Ficção</h1>
+        <nav>
+            <a th:href="@{/}">← Página Inicial</a>
+        </nav>
+    </header>
+
+        <section class="lista-livros">
+            <h2>Nossos Livros de Ficção</h2>
+            
+            <div class="livros-container">
+                <div th:each="livro : ${livros}" class="livro-card">
+                    <div class="capa-livro">
+                        <img th:if="${livro.capa}" th:src="@{${livro.capa}}" 
+                             th:alt="${livro.nome}" class="capa-imagem">
+                    </div>
+                    
+                    <div class="info-livro">
+                        <h3 th:text="${livro.nome}">Nome do Livro</h3>
+                        <p class="autor" th:text="'Autor: ' + ${livro.autor}">Autor</p>
+                        <p class="preco" th:text="'R$ ' + ${#numbers.formatDecimal(livro.preco, 1, 2)}">Preço</p>
+                        <p class="categoria" th:text="'Categoria: ' + ${livro.categoria.label}">Categoria</p>
+                        <p class="paginas" th:text="'Páginas: ' + ${livro.numeroPaginas}">Páginas</p>
+                        <p class="destaque" th:text="${livro.destaque.label} + '!'"></p>
+                        <p class="ano" th:text="'Ano: ' + ${livro.anoPublicacao}">Ano</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Online. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

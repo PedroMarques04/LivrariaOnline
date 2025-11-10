@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Livraria Online</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <script th:src="@{/js/index.js}"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Livraria Online</h1>
+        <p>Encontre seu próximo livro favorito</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/destaques}">Destaques</a></li>
+            <li><a th:href="@{/bestSellers}">Best Sellers</a></li>
+            <li><a href="#lancamentos">Lançamentos</a></li>
+        </ul>
+    </nav>
+    <section id="categorias">
+        <h2>📂 Categorias</h2>
+        <div>
+            <ul>
+                <li><a th:href="@{/ficcao}">Ficção</a></li>
+                <li>Não-Ficção</li>
+                <li>Fantasia</li>
+                <li><a th:href="@{/romance}">Romance</a></li>
+                <li>Biografia</li>
+                <li>Tecnologia</li>
+                <li>Autoajuda</li>
+                <li>Infantil</li>
+                <li>Espiritualidade</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <div>
+                <h4>Livraria Online</h3>
+                    <p>Seu mundo de leituras desde 2025</p>
+            </div>
+
+            <div>
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a th:href="@{/destaques}">Destaques</a></li>
+                    <li><a th:href="@{/bestSellers}">Best Sellers</a></li>
+                    <li><a href="#lancamentos">Lançamentos</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Atendimento</h4>
+                <p>📞 (11) 9999-9999</p>
+                <p>✉️ contato@livrariaonline.com</p>
+                <p>🕒 Seg à Sex: 9h às 18h</p>
+            </div>
+        </div>
+
+        <div>
+            <p>&copy; 2025 Livraria Online. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>
